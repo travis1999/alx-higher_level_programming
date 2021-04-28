@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def is_lower(c):
+def islower(c):
     return 96 < ord(c) < 173
