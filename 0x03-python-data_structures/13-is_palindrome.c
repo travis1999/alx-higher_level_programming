@@ -4,7 +4,7 @@
 
 /**
  * count - counts elements in linked list
- * head: head of linked list
+ * @head: head of linked list
  * Return: number of elemments in linked list
  */
 
@@ -12,10 +12,10 @@ int count(listint_t **head)
 {
 	int n;
 	const listint_t *current;
-	current = *head;
 
+	current = *head;
 	n = 0;
-	while(current != NULL)
+	while (current != NULL)
 	{
 		n++;
 		current = current->next;
@@ -26,9 +26,9 @@ int count(listint_t **head)
 
 /**
  * is_pal - check if int list is palindrome
- * start: check start
- * end: check end
- * list: list to check
+ * @start: check start
+ * @end: check end
+ * @list: list to check
  * Return: 1 if is palindrome else 0
  */
 
@@ -45,7 +45,7 @@ int is_pal(int start, int end, int *list)
 
 /**
  * is_palindrome - is palindrome set up
- * head: head of list
+ * @head: head of list
  * Return: 1 if is palindrome else 0
  */
 
