@@ -2,13 +2,12 @@
 
 
 def safe_print_list(my_list=[], x=0):
-    idx = 0
-    try:
-        for idx, x in enumerate(my_list[:x]):
-            print("{}".format(x), end="")
-    except IndexError:
-        for idx, x in enumerate(my_list):
-            print("{}".format(x), end="")
-    finally:
-        print()
-        return idx + 1
+    if x == 0:
+        return 0
+    for idx in range(x):
+        try:
+            print("{}".format(my_list[idx]), end="")
+        except IndexError:
+            idx -= 1
+            break
+    return idx + 1
