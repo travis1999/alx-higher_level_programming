@@ -71,8 +71,14 @@ class Square:
         """
             prints a square
         """
-        for x in range(self.size):
-            print(" "*self.position[0]+"#"*self.size)
+
+        if self.size == 0:
+            print()
+        else:
+            for y in range(self.position[1]):
+                print()
+            for x in range(self.size):
+                print(" "*self.position[0]+"#"*self.size)
 
 
 if __name__ == "__main__":
