@@ -48,12 +48,25 @@ class Square:
 
     def my_print(self):
         """ prints the square"""
-        for x in range(self.size):
-            print("#"*self.size)
+        if self.size == 0:
+            print()
+        else:
+            for x in range(self.size):
+                print("#"*self.size)
 
 
 if __name__ == "__main__":
-    test_sq = Square(10)
-    print(test_sq.size)
+    my_square = Square(3)
+    my_square.my_print()
 
-    test_sq.my_print()
+    print("--")
+
+    my_square.size = 10
+    my_square.my_print()
+
+    print("--")
+
+    my_square.size = 0
+    my_square.my_print()
+
+    print("--")
