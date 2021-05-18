@@ -2,6 +2,7 @@
 
 """0-square.py"""
 
+
 class Square:
     """Square class def"""
     pass
