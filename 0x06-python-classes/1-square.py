@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""Creating classes
-
-class square created with private var size
-
-"""
+"""Creating classes"""
 
 
 class Square:
+    """Square class"""
+
     def __init__(self, size):
         """Square initializer
 
