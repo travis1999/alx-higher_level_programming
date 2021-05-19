@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
-""" Square class definition """
+"""Square class definition"""
 
 
 class Square:
-    """ Square class """
+    """Square class"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """ Square initializer
+        """Square initializer
 
             Args:
                 size (int): size of square
@@ -20,7 +20,7 @@ class Square:
 
     @property
     def size(self):
-        """ size getter """
+        """size getter"""
         return self.__size
 
     @size.setter
