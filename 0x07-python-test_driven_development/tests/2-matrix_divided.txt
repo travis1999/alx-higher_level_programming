@@ -2,3 +2,22 @@
 >>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 >>> matrix_divided(matrix, 1)
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "holberton")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix_divided([["got", "u", "g"], [4, 7, 9]], 5)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 5, 6, 7, 10], [3, 2, 6]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided([[3, 9], [12, 15]], 3)
+[[1.0, 3.0], [4.0, 5.0]]
