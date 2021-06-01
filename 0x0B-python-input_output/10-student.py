@@ -15,7 +15,8 @@ class Student:
         """to json"""
         if not attrs:
             return self.__dict__
-        return {attr: value for attr, value in self.__dict__.items() if attr in attrs}
+        return {attr: value for attr, value in
+                self.__dict__.items() if attr in attrs}
 
 
 if __name__ == "__main__":
