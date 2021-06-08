@@ -40,37 +40,45 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """wwidth setter"""
         self.validate_value("width", value)
         self.__width = value
 
     @property
     def height(self):
+        """height getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """height setter"""
         self.validate_value("height", value)
         self.__height = value
 
     @property
     def x(self):
+        """x"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """x setter"""
         self.validate_pos("x", value)
         self.__x = value
 
     @property
     def y(self):
+        """y getter"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """y setter"""
         self.validate_pos("y", value)
         self.__y = value
 
@@ -113,6 +121,8 @@ class Rectangle(Base):
                 self.id = value
 
     def to_dictionary(self):
+        """Returns a dictionary representation
+        """
         return {
             "x": self.x,
             "y": self.y,

@@ -8,6 +8,14 @@ class Square(Rectangle):
     """Square class"""
 
     def __init__(self, size, x=0, y=0, id=None):
+        """Square initializer
+            Args:
+                size(int): size of the square
+            Kwargs:
+                x(int): x position
+                y(int): y position
+                id(int): id of the shape
+        """
         super().__init__(size, size, x, y, id)
         self.side = size
 
@@ -17,10 +25,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """size getter"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """size setter"""
         self.width = value
         self.height = value
 

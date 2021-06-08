@@ -38,6 +38,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """loads from file"""
         c_name = cls.__class__.__name__
         file_name = c_name+".json"
 
