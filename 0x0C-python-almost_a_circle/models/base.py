@@ -85,4 +85,4 @@ class Base:
 
         if not list_dictionaries:
             return "[]"
-        return json.dumps([x.to_dictionary() for x in list_dictionaries])
+        return json.dumps(list_dictionaries)
