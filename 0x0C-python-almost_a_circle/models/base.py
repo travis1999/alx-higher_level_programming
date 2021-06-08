@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import json
+import os
 
 
 class Base:
@@ -26,8 +27,24 @@ class Base:
             id, x, y, width, height for rectangle
             size, id, x, y for square
         """
-        if len(dictionary) == 5:
-            rec = Rectangle
+
+        try:
+            ins = cls(1)
+        except TypeError:
+            ins = cls(2, 2)
+        ins.update(**dictionary)
+        return ins
+
+    @classmethod
+    def load_from_file(cls):
+        c_name = cls.__class__.__name__
+        file_name = c_name+".json"
+
+        if os.path.exists(file_name):
+            with open(file_name, "r") as file:
+                s_data = cls.from_json_string(file.read())
+                return [cls.create(**dta) for dta in s_data]
+        return []
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -36,14 +53,14 @@ class Base:
             Args:
                 list_objs(List[Base]): list of objects to save
         """
-        class_name = cls.__class__.__name__
-        with open("{}.json".format(class_name), "w") as file:
+        c_name = cls.__name__
+        with open("{}.json".format(c_name), "w") as file:
             if not list_objs:
                 json.dump([], file)
             else:
-                file.write(self.to_json_string(list_objs))
+                file.write(cls.to_json_string(list_objs))
 
-   @staticmethod
+    @staticmethod
     def from_json_string(json_string):
         """Returns a list of dictionaries containing Base
         serialized data
@@ -67,4 +84,4 @@ class Base:
 
         if not list_dictionaries:
             return "[]"
-        return json.dumps(list_dictionaries)
+        return json.dumps([x.to_dictionary() for x in list_dictionaries])
