@@ -9,4 +9,4 @@ def read_file(filename=""):
 
 
 if __name__ == "__main__":
-    read_file(filename="student.json")
+    read_file("student.json")
