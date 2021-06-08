@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""base class for all shapes"""
 
 import json
 import os
