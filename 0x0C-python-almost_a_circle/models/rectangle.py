@@ -18,7 +18,7 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                self.x, self.y, self.width, self.height)
+                                                       self.x, self.y, self.width, self.height)
 
     @staticmethod
     def validate_int(name, value):
@@ -111,3 +111,12 @@ class Rectangle(Base):
                 self.y = value
             elif key == "id":
                 self.id = value
+
+    def to_dictionary(self):
+        return {
+            "x": self.x,
+            "y": self.y,
+            "id": self.id,
+            "width": self.width,
+            "height": self.height
+        }
