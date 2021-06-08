@@ -59,7 +59,8 @@ class Base:
             if not list_objs:
                 json.dump([], file)
             else:
-                file.write(cls.to_json_string(list_objs))
+                file.write(cls.to_json_string(
+                    [x.to_dictionary() for x in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
