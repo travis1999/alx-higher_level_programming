@@ -39,7 +39,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """loads from file"""
-        c_name = cls.__class__.__name__
+        c_name = cls.__name__
         file_name = c_name+".json"
 
         if os.path.exists(file_name):
