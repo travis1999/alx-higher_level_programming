@@ -17,8 +17,9 @@ class Rectangle(Base):
         self.y = y
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height
+        )
 
     @staticmethod
     def validate_int(name, value):
