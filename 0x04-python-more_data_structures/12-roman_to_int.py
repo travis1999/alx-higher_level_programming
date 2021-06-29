@@ -2,16 +2,24 @@
 
 
 def roman_to_int(roman_string):
-	roman = {'x': 10, 'v': 5, 'i': 1, 'l': 50, 'c': 100, 'd': 500, 'm': 1000}
-	roman_digits = [roman[x] for x in roman_string]
-	total = 0
-	for idx, x in enumerate(roman_digits):
-		try:
-			if x <= roman_digits[idx + 1]:
-				total += x
-			if x > total:
-				total = x - total
-		except IndexError:
-			total += x
-	return total
-		
+    n_rom = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000}
+    value = 0
+    num = 0
+    len_n = roman_string
+    if type(roman_string) is not str:
+        return 0
+    if roman_string is None:
+        return 0
+    for num in range(num, len(len_n)):
+        if num < len(len_n) - 1 and n_rom[len_n[num]] < n_rom[len_n[num + 1]]:
+            value -= n_rom[len_n[num]]
+        else:
+            value += n_rom[len_n[num]]
+    return value
