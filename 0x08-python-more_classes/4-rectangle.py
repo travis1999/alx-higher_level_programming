@@ -13,13 +13,13 @@ class Rectangle:
     def __str__(self):
         if self.width == 0 or self.height == 0:
             return ""
-        return ("#"*self.width + "\n") * self.height
+        return (("#"*self.width + "\n") * self.height)[:-1]
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.width, self.height)[:-1]
 
     def check_dim(self, value, name):
-        """checks if dimention is valid"""
+        """checks if dimension is valid"""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value < 0:
