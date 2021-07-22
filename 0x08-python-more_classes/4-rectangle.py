@@ -16,7 +16,12 @@ class Rectangle:
         return (("#"*self.width + "\n") * self.height)[:-1]
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.width, self.height)[:-1]
+        """Get string."""
+        width = self.__width
+        height = self.__height
+        string = "Rectangle(" + str(width) + \
+            ", " + str(height) + ")"
+        return string
 
     def check_dim(self, value, name):
         """checks if dimension is valid"""
