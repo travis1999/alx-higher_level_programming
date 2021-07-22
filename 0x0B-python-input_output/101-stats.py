@@ -5,10 +5,10 @@ find stats
 """
 
 
-    
 def stat():
-    stdin = sys.stdin
+    """find stats"""
 
+    stdin = sys.stdin
     c = 0
     size = 0
     vd = ['200', '301', '400', '401', '403', '404', '405', '500']
@@ -51,8 +51,5 @@ def stat():
         raise
 
 
-
 if __name__ == "__main__":
     stat()
-
-    
