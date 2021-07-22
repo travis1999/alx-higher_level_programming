@@ -13,7 +13,7 @@ class Rectangle:
     def __str__(self):
         if self.width == 0 or self.height == 0:
             return ""
-        return ("#"*self.width + "\n") * self.height
+        return (("#"*self.width + "\n") * self.height)[:-1]
 
     def check_dim(self, value, name):
         """checks if dimention is valid"""
