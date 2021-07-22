@@ -1,8 +1,7 @@
 #!/usr/bin/python3
+"""find stats"""
+
 import sys
-"""
-find stats
-"""
 
 
 def stat():
