@@ -1,19 +1,11 @@
 #!/usr/bin/python3
-
 """
 matrix multiplication ?
 """
 
 
 def matrix_mul(m_a, m_b):
-    """
-    Multiply matrix
-		Args:
-			m_a: list
-			m_b: list
-		Return:
-			LIST
-    """
+    """Multiply matrix"""
     if type(m_a) != list:
         raise TypeError('m_a must be a list')
     if type(m_b) != list:
@@ -54,6 +46,6 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
     result = [[sum(a * b for a, b in zip(a_r, b_c))
-               for b_c in zip(*m_b)]
+              for b_c in zip(*m_b)]
               for a_r in m_a]
     return result
