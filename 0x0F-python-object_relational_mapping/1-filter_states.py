@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""filter by states"""
 
 import MySQLdb
 import sys

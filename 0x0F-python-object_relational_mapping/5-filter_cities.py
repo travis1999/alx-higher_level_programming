@@ -12,7 +12,7 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3], charset="utf8") as db:
         cursor = db.cursor()
         cursor.execute("SELECT cities.name FROM cities \
-    	JOIN states ON cities.state_id = states.id WHERE states.name LIKE \"{}\" \
-    	ORDER BY cities.id".format(argv[4]))
+JOIN states ON cities.state_id = states.id WHERE states.name LIKE \"{}\" \
+ORDER BY cities.id".format(argv[4]))
         rows = cursor.fetchall()
         print(", ".join(city[0] for city in rows))
