@@ -1,21 +1,23 @@
 #!/usr/bin/python3
-"""filter by states"""
 
 import MySQLdb
 import sys
 
+def main():
+    uname, passw, db_name = sys.argv[1:]
+    connection = MySQLdb.connect(host="localhost", port=3306,
+            user=uname, passwd=passw, db=db_name)
+    cursor = connection.cursor()
+
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+
+    query_rows = cursor.fetchall()
+    for row in query_rows:
+        print(row)
+
+    cursor.close()
+    connection.close()
+    
 
 if __name__ == "__main__":
-
-    if len(sys.argv) != 4:
-        print("usage: ./0-select_states.py username password database")
-        exit()
-
-    with MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
-                         db=sys.argv[3], port=3306) as db:
-        cursor = db.cursor()
-        cursor.execute(
-            "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-
-        for unit in cursor.fetchall():
-            print(unit)
+    main()
