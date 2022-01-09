@@ -8,11 +8,12 @@ def find_peak(list_of_integers):
     length = len(list_of_integers)
     if length == 0:
         return None
-    peak = re_peak(list_of_integers, 0, length - 1)
+    peak = sort_list(list_of_integers, 0, length - 1)
     return peak
 
 
 def sort_list(int_list, start, end):
+    """sorts a list of integers"""
     if start == end:
         return int_list[start]
     mid = int((start + end) // 2)
